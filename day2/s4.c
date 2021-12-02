@@ -23,15 +23,14 @@ int main()
         int unit;
         fscanf(fp1, "%s %d", dir,&unit);
         if (dir[0] == 'u')
-            aim += unit;
+            aim -= unit;
         else if (dir[0] == 'd')
-            aim -=unit;
+            aim +=unit;
         else if (dir[0] == 'f')
         {
             hor += unit;
             dep += unit*aim;
         }
-        //printf("%s %d %d %d %d\n", dir, unit, aim, hor, dep);
     }
     printf("\n%d %d %d", hor, dep, (hor*dep));
 

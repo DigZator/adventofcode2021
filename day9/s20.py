@@ -25,12 +25,18 @@ class Grid:
 
 if __name__ == "__main__":
 	with open('input.txt') as f:
-		board = []
-		for line in f.readlines():
-			row = []
-			line = line.strip()
-			for x in line:
-				row.append(int(x))
-			board.append(row)
-		g = Grid(board)
-		print(g.grid)
+		#board = []
+		#for line in f.readlines():
+		#	row = []
+		#	line = line.strip()
+		#	for x in line:
+		#		row.append(int(x))
+		#	board.append(row)
+		#g = Grid(board)
+		#print(g.grid)
+		rows = [line.strip() for line in f.readline()]
+	height_map = {}
+	for y, row in enumerate(rows):
+		for x, height in enumerate(row):
+			height_map[(x,y)] = int(height)
+	print(height_map)
